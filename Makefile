@@ -1,9 +1,9 @@
 CFLAGS = -g -pedantic -Wall
 
-host: host.c
+getaddrinfo: getaddrinfo.c
 	cc $(CFLAGS) -o $@ $^
 
 .PHONY: clean
 clean:
-	rm -f host
+	rm -f getaddrinfo
 	rm -rf *.dSYM

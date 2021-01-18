@@ -10,9 +10,9 @@
 
 void usage() {
 	fputs(
-			"usage: host hostname\n"
+			"usage: getaddrinfo hostname\n"
 			"\n"
-			"host is a tool for doing DNS lookups. It uses the POSIX\n"
+			"getaddrinfo is a tool for doing DNS lookups. It uses the POSIX\n"
 			"standard getaddrinfo(3) interface. Give a hostname as an argument\n"
 			"and host will respond with the IP addresses it maps to.\n",
 
