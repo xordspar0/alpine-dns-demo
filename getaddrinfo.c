@@ -48,7 +48,7 @@ int main(int argc, char *argv[])
 				      NI_NUMERICHOST);
 		if (err != 0) {
 			fprintf(stderr, "%s\n", gai_strerror(err));
-			return EX_SOFTWARE;
+			continue;
 		}
 
 		puts(ip_address);
