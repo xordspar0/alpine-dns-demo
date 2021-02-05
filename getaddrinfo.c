@@ -35,7 +35,7 @@ int main(int argc, char *argv[])
 		return EX_NOHOST;
 		break;
 	default:
-		puts(gai_strerror(err));
+		fprintf(stderr, "%s\n", gai_strerror(err));
 		return EX_SOFTWARE;
 	}
 
@@ -47,7 +47,7 @@ int main(int argc, char *argv[])
 				      NULL, 0,
 				      NI_NUMERICHOST);
 		if (err != 0) {
-			puts(gai_strerror(err));
+			fprintf(stderr, "%s\n", gai_strerror(err));
 			return EX_SOFTWARE;
 		}
 
