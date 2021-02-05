@@ -14,7 +14,7 @@ void usage()
 	      "\n"
 	      "getaddrinfo is a tool for doing DNS lookups. It uses the POSIX\n"
 	      "standard getaddrinfo(3) interface. Give a hostname as an argument\n"
-	      "and host will respond with the IP addresses it maps to.\n",
+	      "and getaddrinfo will respond with the IP addresses it maps to.\n",
 	      stderr);
 }
 
