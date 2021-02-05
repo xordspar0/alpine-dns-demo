@@ -40,11 +40,9 @@ int main(int argc, char *argv[])
 	}
 
 	for (struct addrinfo * addr = addrs; addr != NULL; addr = addr->ai_next) {
-		struct sockaddr *sa = addr->ai_addr;
-		socklen_t sa_len = addr->ai_addrlen;
 		char ip_address[128] = "";
 
-		int err = getnameinfo(sa, sa_len,
+		int err = getnameinfo(addr->ai_addr, addr->ai_addrlen,
 				      ip_address, sizeof ip_address,
 				      NULL, 0,
 				      NI_NUMERICHOST);
