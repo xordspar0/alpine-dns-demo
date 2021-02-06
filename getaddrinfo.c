@@ -1,5 +1,6 @@
 #include <netdb.h>
 #include <stdio.h>
+#include <string.h>
 #include <sys/socket.h>
 #include <sys/types.h>
 
@@ -51,7 +52,19 @@ int main(int argc, char *argv[])
 			continue;
 		}
 
-		puts(ip_address);
+		char protocol[8] = "";
+		switch (addr->ai_protocol) {
+		case IPPROTO_TCP:
+			strcpy(protocol, "TCP");
+			break;
+		case IPPROTO_UDP:
+			strcpy(protocol, "UDP");
+			break;
+		default:
+			strcpy(protocol, "unknown");
+		}
+
+		printf("%s\t%s\n", protocol, ip_address);
 	}
 
 	freeaddrinfo(addrs);
